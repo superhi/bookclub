@@ -5,6 +5,7 @@ import {GlobalStyle} from './styles'
 
 const App = () => {
   const [books, setBooks] = useState([])
+  const [selectedBook, setSelectedBook] = useState(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,11 +17,17 @@ const App = () => {
     fetchData()
   }, [])
 
+  const pickBook = (book) => {
+    setSelectedBook(book)
+  }
+
+  console.log(selectedBook)
+
   return (
     <>
       <GlobalStyle />
       <Header />
-      <BooksContainer books={books} />
+      <BooksContainer books={books} pickBook={pickBook} />
     </>
   )
 }
