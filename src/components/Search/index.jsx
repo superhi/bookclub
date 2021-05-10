@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-import {SearchContainer, Input, Icon} from './styles'
+import {SearchContainer, Input, Icon, Wrapper} from './styles'
 import {Close} from '../../styles'
 
 const Search = ({filterBooks}) => {
@@ -21,11 +21,13 @@ const Search = ({filterBooks}) => {
   }
 
   return (
-    <SearchContainer $showOnDesktop={showOnDesktop}>
-      <Icon onClick={showSearch} />
-      <Input ref={inputEl} type="text" name="search" autoComplete="off" onChange={handleChange} />
-      <Close onClick={clearSearch} />
-    </SearchContainer>
+    <Wrapper>
+      <SearchContainer $showOnDesktop={showOnDesktop}>
+        <Icon onClick={showSearch} />
+        <Input ref={inputEl} type="text" name="search" autoComplete="off" onChange={handleChange} />
+        <Close onClick={clearSearch} />
+      </SearchContainer>
+    </Wrapper>
   )
 }
 
