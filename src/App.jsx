@@ -22,14 +22,18 @@ const App = () => {
     setSelectedBook(book)
   }
 
+  const closePanel = () => {
+    setSelectedBook(null)
+  }
+
   console.log(selectedBook)
 
   return (
     <>
       <GlobalStyle />
       <Header />
-      <BooksContainer books={books} pickBook={pickBook} />
-      {selectedBook && <DetailPanel book={selectedBook} />}
+      <BooksContainer books={books} pickBook={pickBook} isPanelOpen={selectedBook !== null} />
+      {selectedBook && <DetailPanel book={selectedBook} closePanel={closePanel} />}
     </>
   )
 }
