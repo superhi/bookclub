@@ -27,7 +27,7 @@ const BooksContainer = ({books, pickBook, isPanelOpen, title}) => {
     }
 
     prevPanelState.current = isPanelOpen
-  }, [isPanelOpen, prevPanelState])
+  }, [isPanelOpen, prevPanelState, scroll])
 
   return (
     <Container $isPanelOpen={isPanelOpen} $top={scroll}>
