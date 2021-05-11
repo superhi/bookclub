@@ -34,7 +34,7 @@ export const P = styled.p`
 `
 
 export const Em = styled.em`
-  font-weight: italic;
+  font-style: italic;
 `
 
 export const CloseWrapper = styled(Pill)`
