@@ -7,6 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    background-color: #a7e1f8;
   }
 `
 
