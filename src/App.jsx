@@ -20,7 +20,7 @@ const App = () => {
     }
 
     fetchData()
-  }, [faveBookIds])
+  }, [])
 
   const pickBook = (bookId) => {
     setBooks((books) => books.map((book) => ({...book, isPicked: book.id === bookId})))
