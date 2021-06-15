@@ -1,9 +1,9 @@
-import React, {useEffect, useRef} from 'react'
-import {Panel, P, Em, CloseWrapper, BG} from './styles'
-import {Close} from '../../styles'
+import React, {useRef, useEffect} from 'react'
 import Book from '../Book'
+import {CloseWrapper, Panel, BG, P, Em} from './styles'
+import {Close, Button} from '../../styles'
 
-const DetailPanel = ({book, closePanel, state}) => {
+const DetailPanel = ({book, closePanel, state, toggleFave}) => {
   const panelEl = useRef(null)
   const prevBook = useRef(null)
 
@@ -11,7 +11,6 @@ const DetailPanel = ({book, closePanel, state}) => {
     if (prevBook.current !== book) {
       panelEl.current.scrollTop = 0
     }
-
     prevBook.current = book
   }, [book, prevBook])
 
@@ -22,9 +21,11 @@ const DetailPanel = ({book, closePanel, state}) => {
         <CloseWrapper onClick={closePanel} $state={state}>
           <Close />
         </CloseWrapper>
-
         {book && (
           <>
+            <Button onClick={() => toggleFave(book.id)} $hasEmoji={true}>
+              {book.isFaved ? '💔 Unfave book' : '❤️ Fave book'}
+            </Button>
             <Book book={book} isLarge={true} />
             <P>{book.description}</P>
             <P>

@@ -1,12 +1,12 @@
 import React from 'react'
-import {Logo, HeaderContainer} from './styles'
+import {HeaderContainer, Logo, RightContainer} from './styles'
 
 const Header = ({children}) => (
   <HeaderContainer>
     <a href="/">
       <Logo title="Book Club logo" />
     </a>
-    {children}
+    <RightContainer>{children}</RightContainer>
   </HeaderContainer>
 )
 
